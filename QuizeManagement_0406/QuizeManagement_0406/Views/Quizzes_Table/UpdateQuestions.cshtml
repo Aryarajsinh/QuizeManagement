@@ -1,0 +1,273 @@
+﻿@*@{
+        ViewBag.Title = "CreateQuestions";
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+
+    @model QuizeManagement.Models.ViewModels.QuestionOrOpetionAddingModel
+
+    @{
+        ViewBag.Title = "Edit Question";
+    }
+
+    <h2>Edit Question</h2>
+
+    <form action="/YourController/UpdateQuestion" method="post">
+        <input type="hidden" name="QuestionId" value="@Model.questionId" />
+        <input type="hidden" name="QuizId" value="@Model.quizId" />
+
+        <div>
+            <label>Question Text</label>
+            <textarea name="QuestionText" class="form-control">@Model.question</textarea>
+        </div>
+
+        <div>
+            <label>Option 1</label>
+            <input type="text" name="Option1" class="form-control" value="@Model.options1" />
+        </div>
+        <div>
+            <label>Option 2</label>
+            <input type="text" name="Option2" class="form-control" value="@Model.options2" />
+        </div>
+        <div>
+            <label>Option 3</label>
+            <input type="text" name="Option3" class="form-control" value="@Model.options3" />
+        </div>
+        <div>
+            <label>Option 4</label>
+            <input type="text" name="Option4" class="form-control" value="@Model.options4" />
+        </div>
+
+        <div>
+            <label>Correct Answer</label>
+            <select name="CorrectAnswer" class="form-control">
+                <option value="A" @(Model.Answers == "A" ? "selected" : "")>Option 1</option>
+                <option value="B" @(Model.Answers == "B" ? "selected" : "")>Option 2</option>
+                <option value="C" @(Model.Answers == "C" ? "selected" : "")>Option 3</option>
+                <option value="D" @(Model.Answers == "D" ? "selected" : "")>Option 4</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+
+
+    <script>
+        $(document).ready(function () {
+            var UserData = [];
+            var questionCount = 1;
+
+            $('#AddQuestion').on('click', function () {
+                if (validateQuestions() && validateOptions() && validateCorrectAnswers()) {
+                    if (questionCount < 5) {
+                        var div = `
+                            <div class="question">
+                                <input type="hidden" name="questionId" class="question-id dynamic" value="" />
+                                <textarea class="question-text form-control dynamic" name="question">Question</textarea>
+                                <div class="validation-message"></div>
+                                <div class="answers">
+                                    <div class="answer-pair">
+                                        <label style="white-space: nowrap; margin-top: 11px;">Option 1</label>
+                                        <input type="text" name="options1" class="options form-control p-2 m-2 dynamic" />
+                                        <span class="validation-message"></span>
+
+                                        <label style="white-space: nowrap; margin-top: 11px;">Option 2</label>
+                                        <input type="text" name="options2" class="options form-control p-2 m-2 dynamic" />
+                                        <span class="validation-message"></span>
+                                    </div>
+                                    <div class="answer-pair">
+                                        <label style="white-space: nowrap; margin-top: 11px;">Option 3</label>
+                                        <input type="text" name="options3" class="options form-control p-2 m-2 dynamic" />
+                                        <span class="validation-message"></span>
+
+                                        <label style="white-space: nowrap; margin-top: 11px;">Option 4</label>
+                                        <input type="text" name="options4" class="options form-control p-2 m-2 dynamic" />
+                                        <span class="validation-message"></span>
+                                    </div>
+                                </div>
+                                <div class="add-answers">
+                                    <label>Correct Answers</label>
+                                    <select class="form-select AnswersClasss dynamic" name="Answers">
+                                        <option value="Select Answers" selected>Select Answers</option>
+                                        <option>A</option>
+                                        <option>B</option>
+                                        <option>C</option>
+                                        <option>D</option>
+                                    </select>
+                                    <span class="validation-message"></span>
+                                </div>
+                            </div>`;
+                        $('#QuestionMainDiv').append(div);
+                        questionCount++;
+                    } else {
+                        $('#AddQuestion').prop('disabled', true);
+                    }
+                } else {
+                    alert('Please fill out all question fields before adding a new question.');
+                }
+            });
+
+            function validateQuestions() {
+                var isValid = true;
+                $('.question-text').each(function () {
+                    if ($.trim($(this).val()) === '') {
+                        isValid = false;
+                        $(this).addClass('is-invalid');
+                        $(this).siblings('.validation-message').text('Please fill out this field.').addClass('text-danger');
+                    } else {
+                        $(this).removeClass('is-invalid');
+                        $(this).siblings('.validation-message').text('').removeClass('text-danger');
+                    }
+                });
+                return isValid;
+            }
+
+            function validateOptions() {
+                var isValid = true;
+                $('.options').each(function () {
+                    if ($.trim($(this).val()) === '') {
+                        isValid = false;
+                        $(this).addClass('is-invalid');
+                        $(this).siblings('.validation-message').text('Please fill out this field.').addClass('text-danger');
+                    } else {
+                        $(this).removeClass('is-invalid');
+                        $(this).siblings('.validation-message').text('').removeClass('text-danger');
+                    }
+                });
+                return isValid;
+            }
+
+            function validateCorrectAnswers() {
+                var isValid = true;
+                $('.AnswersClasss').each(function () {
+                    if ($(this).val() === 'Select Answers') {
+                        isValid = false;
+                        $(this).addClass('is-invalid');
+                        $(this).siblings('.validation-message').text('Please select a correct answer.').addClass('text-danger');
+                    } else {
+                        $(this).removeClass('is-invalid');
+                        $(this).siblings('.validation-message').text('').removeClass('text-danger');
+                    }
+                });
+                return isValid;
+            }
+
+            $('#submit').on('click', function () {
+                UserData = []; // Clear previous data
+                var dynamicObjects = document.querySelectorAll('.dynamic');
+                for (var i = 0; i < dynamicObjects.length; i += 7) {
+                    var DynamicArrayObject = {}
+
+                    for (var j = 0; j < 7; j++) {
+                        if (j == 0) {
+                            var quizId = document.getElementById('QuizId').value;
+                            DynamicArrayObject["quizId"] = quizId
+                        }
+                        var element = dynamicObjects[i + j];
+                        var name = element.name;
+                        var value = element.value;
+                        DynamicArrayObject[name] = value;
+                    }
+                    UserData.push(DynamicArrayObject);
+                }
+                console.log(UserData);
+                $.ajax({
+                    url: '/Admin/CreateQuestions',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(UserData),
+                    success: function (data) {
+                        console.log(data);
+                    }
+                })
+            });
+
+            $('#update').on('click', function () {
+                UserData = []; // Clear previous data
+                var dynamicObjects = document.querySelectorAll('.dynamic');
+                for (var i = 0; i < dynamicObjects.length; i += 7) {
+                    var DynamicArrayObject = {}
+
+                    for (var j = 0; j < 7; j++) {
+                        if (j == 0) {
+                            var quizId = document.getElementById('QuizId').value;
+                            DynamicArrayObject["quizId"] = quizId
+                        }
+                        var element = dynamicObjects[i + j];
+                        var name = element.name;
+                        var value = element.value;
+                        DynamicArrayObject[name] = value;
+                    }
+                    UserData.push(DynamicArrayObject);
+                }
+                console.log(UserData);
+                $.ajax({
+                    url: '/Admin/UpdateQuestions',
+                    type: 'PUT', // Use PUT method for update
+                    contentType: 'application/json',
+                    data: JSON.stringify(UserData),
+                    success: function (data) {
+                        console.log(data);
+                    }
+                })
+            });
+        });
+    </script>*@
+
+@model List<QuizeManagement.Models.ViewModels.QuestionOrOpetionAddingModel>
+
+    @{
+        ViewBag.Title = "Edit Questions";
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+
+    <h2>Edit Questions</h2>
+
+    @using (Html.BeginForm("UpdateQuestions", "Quizzes_Table", FormMethod.Post))
+    {
+        for (int i = 0; i < Model.Count; i++)
+        {
+            <div>
+                <input type="hidden" name="[@i].questionId" value="@Model[i].questionId" />
+                <input type="hidden" name="[@i].quizId" value="@Model[i].quizId" />
+
+                <div>
+                    <label>Question Text</label>
+                    <textarea name="[@i].question" class="form-control">@Model[i].question</textarea>
+                </div>
+
+                <div>
+                    <label>Option 1</label>
+                    <input type="text" name="[@i].options1" class="form-control" value="@Model[i].options1" />
+                </div>
+                <div>
+                    <label>Option 2</label>
+                    <input type="text" name="[@i].options2" class="form-control" value="@Model[i].options2" />
+                </div>
+                <div>
+                    <label>Option 3</label>
+                    <input type="text" name="[@i].options3" class="form-control" value="@Model[i].options3" />
+                </div>
+                <div>
+                    <label>Option 4</label>
+                    <input type="text" name="[@i].options4" class="form-control" value="@Model[i].options4" />
+                </div>
+
+                <div>
+                    <label>Correct Answer</label>
+                    <select name="[@i].CorrectAnswer" class="form-control">
+                        <option value="A" @(Model[i].Answers == "A" ? "selected" : "")>Option 1</option>
+                        <option value="B" @(Model[i].Answers == "B" ? "selected" : "")>Option 2</option>
+                        <option value="C" @(Model[i].Answers == "C" ? "selected" : "")>Option 3</option>
+                        <option value="D" @(Model[i].Answers == "D" ? "selected" : "")>Option 4</option>
+                    </select>
+                </div>
+            </div>
+        }
+        <button type="submit" class="btn btn-primary">Update</button>
+    }
+
+
+
+
+
+

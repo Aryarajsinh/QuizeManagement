@@ -1,0 +1,153 @@
+﻿@model QuizeManagement.Models.ViewModels.QuestionOrOpetionAddingModel
+
+@{
+    ViewBag.Title = "Quiz Question";
+}
+
+@*<h2>Question @((int)Session["CurrentQuestionIndex"] + 1)</h2>
+    <p>@Model.question</p>
+
+    <form action="@Url.Action("SubmitAnswer", "Student")" method="post">
+        <input type="hidden" name="questionId" value="@Model.questionId" />
+        @for (int i = 0; i < 4; i++)
+        {
+            <div>
+                <input type="radio" name="selectedOptionId" value="@Model.Options[i].Option_id" />
+                <label>@Model.Options[i].Option_text</label>
+            </div>
+        }
+        <button type="submit" class="btn btn-primary">Next</button>
+    </form>*@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+ Include Bootstrap CSS for styling 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Add custom styles here if needed */
+        .option-container {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Question @((int)Session["CurrentQuestionIndex"] + 1)</h2>
+                        <p class="card-text">@Model.question</p>
+                   
+                        @Html.ValidationMessageFor(m => m.question, "", htmlAttributes: new { @class = "text-danger" })
+                        <span><h6 id="optionValidation"></h6></span>
+
+
+                        <form action="@Url.Action("SubmitAnswer", "Student")" method="post">
+                            <input type="hidden" name="questionId" value="@Model.questionId" />
+
+                            @for (int i = 0; i < 4; i++)
+                            {
+                                <div class="option-container">
+                                    <input type="radio" id="option@(i)" name="selectedOptionId" value="@Model.Options[i].Option_id" required />
+                                    <label for="option@(i)">@Model.Options[i].Option_text</label>
+                                    @Html.ValidationMessageFor(m => m.Options[i], "", htmlAttributes: new { @class = "text-danger" })
+                                </div>
+                            }
+
+                            <button type="submit" class="btn btn-primary">Next</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+
+
+
+<!--!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>-->
+    <!-- Include Bootstrap CSS for styling -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        #timer {
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Question @((int)Session["CurrentQuestionIndex"] + 1)</h2>
+                        <div id="timer"></div>
+                        <p class="card-text">@Model.question</p>
+                        <form id="quizForm" action="@Url.Action("SubmitAnswer", "Student")" method="post">
+                            <input type="hidden" name="questionId" value="@Model.questionId" />
+                            @for (int i = 0; i < 4; i++)
+                            {
+                                <div class="option-container">
+                                    <input type="radio" id="option@(i)" name="selectedOptionId" value="@Model.Options[i].Option_id" />
+                                    <label for="option@(i)">@Model.Options[i].Option_text</label>
+                                </div>
+                            }
+                            <button type="submit" class="btn btn-primary">Next</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        var duration = 60; // 1 minute in seconds
+        var timerElement = document.getElementById('timer');
+
+        function startTimer() {
+            var timer = duration, minutes, seconds;
+            var interval = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                timerElement.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(interval);
+                    document.getElementById('quizForm').submit();
+                }
+            }, 1000);
+        }
+
+        // Start the timer
+        startTimer();
+    </script>
+</body>
+</html>-->

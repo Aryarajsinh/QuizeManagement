@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuizeManagement_0406Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin_Table">
+    <Key>
+      <PropertyRef Name="Admin_id" />
+    </Key>
+    <Property Name="Admin_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Options_Table">
+    <Key>
+      <PropertyRef Name="Option_id" />
+    </Key>
+    <Property Name="Option_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Question_id" Type="int" />
+    <Property Name="Option_text" Type="text" />
+    <Property Name="Is_correct" Type="bit" />
+    <Property Name="Created_at" Type="datetime" />
+    <Property Name="Updated_at" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Question_Table">
+    <Key>
+      <PropertyRef Name="Question_id" />
+    </Key>
+    <Property Name="Question_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Quiz_id" Type="int" />
+    <Property Name="Question_txt" Type="text" />
+    <Property Name="Created_at" Type="datetime" />
+    <Property Name="Updated_at" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Quizzes_Table">
+    <Key>
+      <PropertyRef Name="Quiz_id" />
+    </Key>
+    <Property Name="Quiz_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar(max)" />
+    <Property Name="Description" Type="text" />
+    <Property Name="Created_by" Type="int" />
+    <Property Name="Created_at" Type="datetime" />
+    <Property Name="Updated_at" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Result_Table">
+    <Key>
+      <PropertyRef Name="Result_id" />
+    </Key>
+    <Property Name="Result_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_id" Type="int" />
+    <Property Name="Quiz_id" Type="int" />
+    <Property Name="Score" Type="int" />
+    <Property Name="Created_at" Type="datetime" />
+  </EntityType>
+  <EntityType Name="User_Answer_Table">
+    <Key>
+      <PropertyRef Name="Answer_id" />
+    </Key>
+    <Property Name="Answer_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_id" Type="int" />
+    <Property Name="Quiz_id" Type="int" />
+    <Property Name="Question_id" Type="int" />
+    <Property Name="Selected_Option_id" Type="int" />
+    <Property Name="Created_at" Type="datetime" />
+  </EntityType>
+  <EntityType Name="User_Table">
+    <Key>
+      <PropertyRef Name="User_id" />
+    </Key>
+    <Property Name="User_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Password_hash" Type="varchar(max)" />
+    <Property Name="Created_at" Type="datetime" />
+    <Property Name="Updated_at" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__Options_T__Quest__4222D4EF">
+    <End Role="Question_Table" Type="Self.Question_Table" Multiplicity="0..1" />
+    <End Role="Options_Table" Type="Self.Options_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question_Table">
+        <PropertyRef Name="Question_id" />
+      </Principal>
+      <Dependent Role="Options_Table">
+        <PropertyRef Name="Question_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Question___Quiz___3E52440B">
+    <End Role="Quizzes_Table" Type="Self.Quizzes_Table" Multiplicity="0..1" />
+    <End Role="Question_Table" Type="Self.Question_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quizzes_Table">
+        <PropertyRef Name="Quiz_id" />
+      </Principal>
+      <Dependent Role="Question_Table">
+        <PropertyRef Name="Quiz_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Quizzes_T__Creat__3A81B327">
+    <End Role="User_Table" Type="Self.User_Table" Multiplicity="0..1" />
+    <End Role="Quizzes_Table" Type="Self.Quizzes_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Table">
+        <PropertyRef Name="User_id" />
+      </Principal>
+      <Dependent Role="Quizzes_Table">
+        <PropertyRef Name="Created_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Result_Ta__Quiz___4E88ABD4">
+    <End Role="Quizzes_Table" Type="Self.Quizzes_Table" Multiplicity="0..1" />
+    <End Role="Result_Table" Type="Self.Result_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quizzes_Table">
+        <PropertyRef Name="Quiz_id" />
+      </Principal>
+      <Dependent Role="Result_Table">
+        <PropertyRef Name="Quiz_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Result_Ta__User___4D94879B">
+    <End Role="User_Table" Type="Self.User_Table" Multiplicity="0..1" />
+    <End Role="Result_Table" Type="Self.Result_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Table">
+        <PropertyRef Name="User_id" />
+      </Principal>
+      <Dependent Role="Result_Table">
+        <PropertyRef Name="User_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Answ__Quest__48CFD27E">
+    <End Role="Question_Table" Type="Self.Question_Table" Multiplicity="0..1" />
+    <End Role="User_Answer_Table" Type="Self.User_Answer_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question_Table">
+        <PropertyRef Name="Question_id" />
+      </Principal>
+      <Dependent Role="User_Answer_Table">
+        <PropertyRef Name="Question_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Answ__Quiz___47DBAE45">
+    <End Role="Quizzes_Table" Type="Self.Quizzes_Table" Multiplicity="0..1" />
+    <End Role="User_Answer_Table" Type="Self.User_Answer_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Quizzes_Table">
+        <PropertyRef Name="Quiz_id" />
+      </Principal>
+      <Dependent Role="User_Answer_Table">
+        <PropertyRef Name="Quiz_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Answ__Selec__49C3F6B7">
+    <End Role="Options_Table" Type="Self.Options_Table" Multiplicity="0..1" />
+    <End Role="User_Answer_Table" Type="Self.User_Answer_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Options_Table">
+        <PropertyRef Name="Option_id" />
+      </Principal>
+      <Dependent Role="User_Answer_Table">
+        <PropertyRef Name="Selected_Option_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Answ__User___46E78A0C">
+    <End Role="User_Table" Type="Self.User_Table" Multiplicity="0..1" />
+    <End Role="User_Answer_Table" Type="Self.User_Answer_Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Table">
+        <PropertyRef Name="User_id" />
+      </Principal>
+      <Dependent Role="User_Answer_Table">
+        <PropertyRef Name="User_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QuizeManagement_0406ModelStoreContainer">
+    <EntitySet Name="Admin_Table" EntityType="Self.Admin_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Options_Table" EntityType="Self.Options_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Question_Table" EntityType="Self.Question_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Quizzes_Table" EntityType="Self.Quizzes_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Result_Table" EntityType="Self.Result_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Answer_Table" EntityType="Self.User_Answer_Table" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Table" EntityType="Self.User_Table" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Options_T__Quest__4222D4EF" Association="Self.FK__Options_T__Quest__4222D4EF">
+      <End Role="Question_Table" EntitySet="Question_Table" />
+      <End Role="Options_Table" EntitySet="Options_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Question___Quiz___3E52440B" Association="Self.FK__Question___Quiz___3E52440B">
+      <End Role="Quizzes_Table" EntitySet="Quizzes_Table" />
+      <End Role="Question_Table" EntitySet="Question_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Quizzes_T__Creat__3A81B327" Association="Self.FK__Quizzes_T__Creat__3A81B327">
+      <End Role="User_Table" EntitySet="User_Table" />
+      <End Role="Quizzes_Table" EntitySet="Quizzes_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Result_Ta__Quiz___4E88ABD4" Association="Self.FK__Result_Ta__Quiz___4E88ABD4">
+      <End Role="Quizzes_Table" EntitySet="Quizzes_Table" />
+      <End Role="Result_Table" EntitySet="Result_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Result_Ta__User___4D94879B" Association="Self.FK__Result_Ta__User___4D94879B">
+      <End Role="User_Table" EntitySet="User_Table" />
+      <End Role="Result_Table" EntitySet="Result_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Answ__Quest__48CFD27E" Association="Self.FK__User_Answ__Quest__48CFD27E">
+      <End Role="Question_Table" EntitySet="Question_Table" />
+      <End Role="User_Answer_Table" EntitySet="User_Answer_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Answ__Quiz___47DBAE45" Association="Self.FK__User_Answ__Quiz___47DBAE45">
+      <End Role="Quizzes_Table" EntitySet="Quizzes_Table" />
+      <End Role="User_Answer_Table" EntitySet="User_Answer_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Answ__Selec__49C3F6B7" Association="Self.FK__User_Answ__Selec__49C3F6B7">
+      <End Role="Options_Table" EntitySet="Options_Table" />
+      <End Role="User_Answer_Table" EntitySet="User_Answer_Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Answ__User___46E78A0C" Association="Self.FK__User_Answ__User___46E78A0C">
+      <End Role="User_Table" EntitySet="User_Table" />
+      <End Role="User_Answer_Table" EntitySet="User_Answer_Table" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

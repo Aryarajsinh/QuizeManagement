@@ -1,0 +1,45 @@
+﻿@model int
+    @{
+        ViewBag.Title = "Start Quiz";
+    }
+
+    @*<h2>Start Quiz</h2>
+    <p>Click the button below to start the quiz.</p>
+    <form action="@Url.Action("StartQuiz", "Quiz")" method="get">
+        <input type="hidden" name="quizId" value="@Model" />
+        <button type="submit" class="btn btn-primary">Start Quiz</button>
+    </form>*@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <!-- Include any necessary CSS files for styling -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Add custom styles here if needed */
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Start Quiz</h2>
+                        <p class="card-text">Click the button below to start the quiz.</p>
+                        <form action="@Url.Action("StartQuiz", "Student")" method="get">
+                            <input type="hidden" name="quizId" value="@Model" />
+                            <button type="submit" class="btn btn-primary btn-block">Start Quiz</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Include any necessary JavaScript files here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

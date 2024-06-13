@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5e3f6d0e8f19482bac0c4d989d523fae" Name="Diagram1">
+        <EntityTypeShape EntityType="QuizeManagement_0406Model.Options_Table" Width="1.5" PointX="7.5" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizeManagement_0406Model.Question_Table" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizeManagement_0406Model.Quizzes_Table" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizeManagement_0406Model.Result_Table" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizeManagement_0406Model.User_Answer_Table" Width="1.5" PointX="9.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuizeManagement_0406Model.User_Table" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <AssociationConnector Association="QuizeManagement_0406Model.FK__Options_T__Quest__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizeManagement_0406Model.FK__User_Answ__Selec__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizeManagement_0406Model.FK__Question___Quiz___3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizeManagement_0406Model.FK__User_Answ__Quest__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizeManagement_0406Model.FK__Quizzes_T__Creat__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizeManagement_0406Model.FK__Result_Ta__Quiz___4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizeManagement_0406Model.FK__User_Answ__Quiz___47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizeManagement_0406Model.FK__Result_Ta__User___4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="QuizeManagement_0406Model.FK__User_Answ__User___46E78A0C" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QuizeManagement_0406Model.Admin_Table" Width="1.5" PointX="0.75" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

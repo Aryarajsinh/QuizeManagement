@@ -1,0 +1,59 @@
+﻿@model QuizeManagement.Models.DbContext.User_Table
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container">
+        <h3 class="text-center p-3">Update My Profile</h3>
+        <hr />
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.User_id)
+
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label mt-3" })
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Created_at, htmlAttributes: new { @class = "control-label mt-3" })
+                    @Html.EditorFor(model => model.Created_at, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Created_at, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group d-none">
+                    @Html.LabelFor(model => model.Password_hash, htmlAttributes: new { @class = "control-label mt-3" })
+                    @Html.EditorFor(model => model.Password_hash, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Password_hash, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <input type="submit" value="Update" class="btn btn-lg btn-primary mt-3 btn-block" />
+                @Html.ActionLink("Back to List", "Index", "User_Table", null, new { @class = "ms-2 mt-3 btn btn-secondary" })
+            </div>
+            <div class="text-center mt-0 ">
+               
+            </div>
+        </div>
+    </div>
+}
+
+

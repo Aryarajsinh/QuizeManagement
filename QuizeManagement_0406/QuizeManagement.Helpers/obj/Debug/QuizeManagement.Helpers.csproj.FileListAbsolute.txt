@@ -1,0 +1,71 @@
+C:\Users\sit406\source\repos\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\QuizeManagement.Helpers.dll.config
+C:\Users\sit406\source\repos\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\QuizeManagement.Helpers.dll
+C:\Users\sit406\source\repos\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\QuizeManagement.Helpers.pdb
+C:\Users\sit406\source\repos\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\EntityFramework.dll
+C:\Users\sit406\source\repos\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sit406\source\repos\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\QuizeManagement.Models.dll
+C:\Users\sit406\source\repos\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\QuizeManagement.Models.pdb
+C:\Users\sit406\source\repos\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\QuizeManagement.Models.dll.config
+C:\Users\sit406\source\repos\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\EntityFramework.xml
+C:\Users\sit406\source\repos\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sit406\source\repos\QuizeManagement_0406\QuizeManagement.Helpers\obj\Debug\QuizeManagement.Helpers.csproj.AssemblyReference.cache
+C:\Users\sit406\source\repos\QuizeManagement_0406\QuizeManagement.Helpers\obj\Debug\QuizeManagement.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\sit406\source\repos\QuizeManagement_0406\QuizeManagement.Helpers\obj\Debug\QuizeManagement.Helpers.csproj.CopyComplete
+C:\Users\sit406\source\repos\QuizeManagement_0406\QuizeManagement.Helpers\obj\Debug\QuizeManagement.Helpers.dll
+C:\Users\sit406\source\repos\QuizeManagement_0406\QuizeManagement.Helpers\obj\Debug\QuizeManagement.Helpers.pdb
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\QuizeManagement.Helpers.dll.config
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\QuizeManagement.Helpers.dll
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\QuizeManagement.Helpers.pdb
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\EntityFramework.dll
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\QuizeManagement.Models.dll
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\QuizeManagement.Models.pdb
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\QuizeManagement.Models.dll.config
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\EntityFramework.xml
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\obj\Debug\QuizeManagement.Helpers.csproj.AssemblyReference.cache
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\obj\Debug\QuizeManagement.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\obj\Debug\QuizeManagement.Helpers.csproj.CopyComplete
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\obj\Debug\QuizeManagement.Helpers.dll
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\obj\Debug\QuizeManagement.Helpers.pdb
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\System.Web.Helpers.dll
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\System.Web.Mvc.dll
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\System.Web.Razor.dll
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\System.Web.WebPages.dll
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\System.Web.Helpers.xml
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\System.Web.Mvc.xml
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\System.Web.Razor.xml
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\System.Web.WebPages.xml
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Aryarajsinh Harma\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\QuizeManagement.Helpers.dll.config
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\QuizeManagement.Helpers.dll
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\QuizeManagement.Helpers.pdb
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\EntityFramework.dll
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\QuizeManagement.Models.dll
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\System.Web.Helpers.dll
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\System.Web.Mvc.dll
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\System.Web.Razor.dll
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\System.Web.WebPages.dll
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\QuizeManagement.Models.pdb
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\QuizeManagement.Models.dll.config
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\EntityFramework.xml
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\System.Web.Helpers.xml
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\System.Web.Mvc.xml
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\System.Web.Razor.xml
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\System.Web.WebPages.xml
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\obj\Debug\QuizeManagement.Helpers.csproj.AssemblyReference.cache
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\obj\Debug\QuizeManagement.Helpers.csproj.CoreCompileInputs.cache
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\obj\Debug\QuizeManagement.Helpers.csproj.CopyComplete
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\obj\Debug\QuizeManagement.Helpers.dll
+C:\Users\sit406\Downloads\QuizeManagement_0406 1\QuizeManagement_0406\QuizeManagement.Helpers\obj\Debug\QuizeManagement.Helpers.pdb
